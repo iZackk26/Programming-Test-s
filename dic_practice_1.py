@@ -187,4 +187,11 @@ def one_list(bubble_list):
 # lista = [[89, 2, 4],[45, 1],[33, 22], [9]]
 # print(bubble_sublist(one_list(lista)))
 
-
+def odd(lst):
+    for sublist in lst:
+        for element in sublist:
+            if element % 2 != 0:
+                sublist.remove(element)
+    return lst
+lista = [[89, 2, 4],[45, 1],[33, 22], [9]]
+print(odd(lista))

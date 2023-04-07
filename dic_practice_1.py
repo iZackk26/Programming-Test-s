@@ -141,6 +141,43 @@ def sort(odd, even):
     even_list = bubble_sort(even)
     return odd_list, even_list
 
-lista = [3,1,6,8,2,8,4,5,7]
-odd, even = odd_and_even(lista)
-print(sort(odd,even))
+# lista = [3,1,6,8,2,8,4,5,7]
+# odd, even = odd_and_even(lista)
+# print(sort(odd,even))
+
+# Ejercicio #12
+
+def divisors(n):
+    new_list = []
+    div = 1
+    while div <= n:
+        if n % div == 0:
+            new_list.append(div)
+        div += 1
+    return new_list
+# print(divisors(8))
+
+#Ejercicio #13
+
+def prime(n):
+    div = 2
+    while div < n:
+        if n % div == 0:
+            return False
+        div += 1
+    return True
+# print(prime(8))
+
+def adding_prime(n):
+    count = 2
+    prime_list = []
+    while count < n:
+        if prime(count) == True:
+            prime_list.append(count)
+        count += 1
+    return prime_list
+print(adding_prime(23))
+
+#Ejercicio #14
+
+

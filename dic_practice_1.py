@@ -167,8 +167,14 @@ def adding_prime(n):
             prime_list.append(count)
         count += 1
     return prime_list
-print(adding_prime(23))
 
 #Ejercicio #14
 
-
+def bubble_sublist(list):
+    n = len(list)
+    i = 0
+    for sublist in list:
+        for subsublist in sublist:
+            for j in range(n-i-1):
+                if list[j] > list[j+1]:
+                    list[j], list[j + 1] = list[j + 1], list[j]

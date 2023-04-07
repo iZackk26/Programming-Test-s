@@ -128,15 +128,19 @@ def odd_and_even(list):
             odd.append(number)
     return odd, even
 
-def sort(odd,even):
-    leng_odd = len(odd) - 2
-    leng_even = len(even) - 2
-    i = len(odd)
-    while i > 0:
-        if odd[i] > odd[i + 1]:
-            copy = odd[i]
-            odd.pop(i)
-        i -= 1
-lista = [3,1,2,6,5,7,4,8]
-x,y = odd_and_even(lista)
-sort(x,y)
+def bubble_sort(list):
+    n = len(list)
+    for i in range(n):
+        for j in range(n-i-1):
+            if list[j] > list[j+1]:
+                list[j], list[j + 1] = list[j + 1], list[j]
+    return list
+
+def sort(odd, even):
+    odd_list = bubble_sort(odd)
+    even_list = bubble_sort(even)
+    return odd_list, even_list
+
+lista = [3,1,6,8,2,8,4,5,7]
+odd, even = odd_and_even(lista)
+print(sort(odd,even))

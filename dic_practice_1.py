@@ -41,9 +41,7 @@ def list_pares(list):
             list.remove(x)
     return list
 
-# Escribir una función que quita la primera ocurrencia de x en L. Se debe retornar
-# una lista que no contenga la primera ocurrencia de x. Ejemplo: Eliminar la
-# primera ocurrencia de 4 en [4, 2, 3, 4, 5, 4, 7] -> [2, 3, 4, 5, 4, 7]
+#Ejercicio 6
 
 def delete_first_repeated(n,list):
     y = 0
@@ -54,10 +52,7 @@ def delete_first_repeated(n,list):
     return list
 
 
-# Escribir una función que quita todas ocurrencia de x en L. Se debe retornar una
-# lista que no contenga x. Ejemplo: Eliminar todas las ocurrencias de 4 en [4, 2,
-# 3, 4, 5, 4, 7] -> [2, 3, 4, 5, 7]
-
+# Ejercicio 7
 def delete_repeated(n,list):
     count = 0
     for x in list:
@@ -67,9 +62,7 @@ def delete_repeated(n,list):
                 list.remove(x)
     return list
 
-# Escribir una función que inserta un elemento x en una lista ordenada tal que
-# retorne una lista ordenada. Ejemplo: insertar 4 en [1, 2, 3, 3, 4, 5, 5, 6, 7]
-# -> [1, 2, 3, 3, 4, 4, 5, 5, 6, 7]
+#Ejercicio 8
 
 def add_and_sort(n,list):
     count = 0
@@ -83,9 +76,7 @@ def add_and_sort(n,list):
             list.append(n)
     return list
 
-# Escribir una función que retorne True si una lista de números está ordenada
-# ascendentemente. Ejemplo: [1, 2, 3, 3, 4, 5, 6, 6, 7, 77] ->True
-
+#Ejercicio 9
 def sort_list(list):
     for i in range(len(list)-1):
         if list[i] > list[i + 1]:
@@ -104,7 +95,7 @@ def alternate_list(list):
         i += 1
     return True
 
-#Siguiente Ejercicio
+#Siguiente 10
 
 def duplicate(n,list):
     new_list = []
@@ -116,7 +107,7 @@ def duplicate(n,list):
 
 list_3 = [1,2,3,4,2]
 
-#Ejercicio 2 listas
+#Ejercicio 11 listas
 
 def odd_and_even(list):
     odd = []

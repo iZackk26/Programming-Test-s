@@ -177,9 +177,14 @@ def bubble_sublist(lst):
                 lst[j], lst[j+1] = lst[j+1], lst[j]
     return lst
 
-def bubble_sort_nested(lst):
-    for i in range(len(lst)):
-        lst[i] = bubble_sublist(lst[i])
-    return lst
-lista = [[89, 2, 4],[45, 1],[33, 22], [9]]
-print(bubble_sort_nested(lista))
+def one_list(bubble_list):
+    new_list = []
+    for sublist in bubble_list:
+        for element in sublist:
+            new_list.append(element)
+    return new_list
+
+# lista = [[89, 2, 4],[45, 1],[33, 22], [9]]
+# print(bubble_sublist(one_list(lista)))
+
+

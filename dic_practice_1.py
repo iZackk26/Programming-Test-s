@@ -188,10 +188,24 @@ def one_list(bubble_list):
 # print(bubble_sublist(one_list(lista)))
 
 def odd(lst):
-    for sublist in lst:
-        for element in sublist:
+    for sublist in lst[:]:
+        for element in sublist[:]:
             if element % 2 != 0:
                 sublist.remove(element)
+        if len(sublist) == 0:
+            lst.remove(sublist)
     return lst
+# lista = [[89, 2, 4],[45, 1],[33, 22], [9]]
+
+def bubble_sort(lst):
+    n = len(lst)
+    for i in range(n):
+        for j in range(0,n-i-1):
+            if lst[j] > lst[j+1]:
+                lst[j], lst[j+1] = lst[j+1], lst[j]
+    return lst
+
+
 lista = [[89, 2, 4],[45, 1],[33, 22], [9]]
-print(odd(lista))
+print(bubble_sort(odd(lista)))
+

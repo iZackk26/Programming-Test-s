@@ -169,12 +169,17 @@ def adding_prime(n):
     return prime_list
 
 #Ejercicio #14
+def bubble_sublist(lst):
+    n = len(lst)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if lst[j] > lst[j+1]:
+                lst[j], lst[j+1] = lst[j+1], lst[j]
+    return lst
 
-def bubble_sublist(list):
-    n = len(list)
-    i = 0
-    for sublist in list:
-        for subsublist in sublist:
-            for j in range(n-i-1):
-                if list[j] > list[j+1]:
-                    list[j], list[j + 1] = list[j + 1], list[j]
+def bubble_sort_nested(lst):
+    for i in range(len(lst)):
+        lst[i] = bubble_sublist(lst[i])
+    return lst
+lista = [[89, 2, 4],[45, 1],[33, 22], [9]]
+print(bubble_sort_nested(lista))

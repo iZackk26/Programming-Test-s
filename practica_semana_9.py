@@ -58,8 +58,10 @@ def particiona_lista(lista):
 def aplanar(lista):
     newl = []
     for sub in lista:
-        for e in sub:
-            newl.append(e)
+        if type(sub) == list:
+            newl.extend(aplanar(sub))
+        else:
+            newl.append(sub)
     return newl
 
 lista = [[7,7,7,333,4],[20,3,42,22,12,1,12],[34,34,5,12],[45],[34,5,15]]

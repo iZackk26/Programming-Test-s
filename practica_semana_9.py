@@ -19,13 +19,41 @@ def sucesion_answer():
         lista.append(result)
         count += 1
     return lista
-print(sucesion_answer())
+# print(sucesion_answer())
 
 
 # Ejercicio #3
 
-l1 = [[7,7,7 333, 4],[20, 3, 42, 22, 12, 1, 12],[34, 34, 5,12],[45],
-      [34, 5, 15]]
+def ordenamiento_quickSort(lista):
+    if len(lista)>0:
+        lista=particiona_lista(lista)
+        cont=0
+        while cont<len(lista):
+            e=lista[cont]
+            if type(e)==list:
+                if len(e)==0:
+                    del lista[cont]
+                elif len(e)==1:
+                    lista[cont]=e[0]
+                    cont = cont + 1
+                else:
+                    lista=lista[:cont]+particiona_lista(e)+lista[cont+1:]
+            else:
+                cont=cont+1
+            
+    return lista
+
+
+def particiona_lista(lista):
+    menores=list()
+    mayores=list()
+    pivote=lista[-1]
+    for x in lista[:-1]:
+        if x<pivote:
+            menores.append(x)
+        else:
+            mayores.append(x) 
+    return([menores,pivote,mayores])
 
 def aplanar(lista):
     newl = []
@@ -34,16 +62,6 @@ def aplanar(lista):
             newl.append(e)
     return newl
 
-def particionate(list):
-    max = list()
-    min = list()
-    pivot = list[-1]
-    for x in lista[:-1]:
-        if x < pivote:
-            min.append(x)
-        else:
-            max.append(x)
-
-    return([min,pivot, max])
-
+lista = [[7,7,7,333,4],[20,3,42,22,12,1,12],[34,34,5,12],[45],[34,5,15]]
+print(aplanar(particiona_lista(lista)))
 

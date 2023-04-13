@@ -64,6 +64,35 @@ def aplanar(lista):
             newl.append(sub)
     return newl
 
-lista = [[7,7,7,333,4],[20,3,42,22,12,1,12],[34,34,5,12],[45],[34,5,15]]
-print(aplanar(particiona_lista(lista)))
+def repeated(lista):
+    new_list = []
+    second_list = []
+    i = 0
+    for element in lista:
+        if element not in new_list:
+            new_list.append(element)
+        elif element in new_list and element not in second_list:
+            second_list.append(element)
+    for element in second_list:
+        index = new_list.index(element)
+        new_list.insert(index, element)
+    return new_list
+            
 
+        
+
+
+# lista = [[7,7,7,333,4],[20,3,42,22,12,1,12],[34,34,5,12],[45],[34,5,15]]
+lista = [1,3,4,55,777,12,12,12,15,20,22,34,34,34,42,45,333]
+new_list = aplanar(particiona_lista(lista))
+new_2_list = repeated(lista)
+# print(new_2_list)
+
+
+def sublists(list):
+    salida = []
+    for n in range(0,len(lista),5):
+        salida.append(lista[n:n + 5])
+    return salida
+
+print(sublists(new_2_list))

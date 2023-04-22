@@ -48,6 +48,14 @@ def quick_sort(lista):
 #Parte C
 
 def two_repeated(lista):
-    first = []
-    second = []
+    new_list = []
+    for element in lista:
+        repeat = new_list.count(element)
+        if repeat < 2:
+            new_list.append(element)
+    return new_list
+
+#Parte D
+
+
 

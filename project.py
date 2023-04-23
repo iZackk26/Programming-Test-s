@@ -68,3 +68,13 @@ def particionate(lista):
 
 
 
+
+
+
+def groups(lista):
+    final = []
+    for x in range(0, len(lista), 5):
+        final.append(lista[x:x + 5])
+    return final
+
+

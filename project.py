@@ -58,4 +58,13 @@ def two_repeated(lista):
 #Parte D
 
 
+def particionate(lista):
+    end = []
+    for element in range(0,len(lista),5):
+        end.append(lista[element: element + 5])
+    return end
+
+
+
+
 

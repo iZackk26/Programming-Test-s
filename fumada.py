@@ -88,4 +88,31 @@ def delete(lista):
 # print(delete([1,2,3,9,2,7,1,10]))
 
 lista = list(range(20, 0, -1))
-print(lista)
+
+
+## Practica de Examen
+
+#Retornar una lista con numeros enteros positivos que sean primos
+
+# lista = [2, 101, 100, 45, 1100, 60, 13, 200, 234, 11101, 29, 33]
+
+def prime_checker(n):
+    c = 2
+    while c < n:
+        if n % c == 0:
+            return False
+        c += 1
+    return True
+
+print(prime_checker(7))
+
+def list_prime(lista):
+    for element in lista:
+        if not prime_checker(element):
+            lista.remove(element)
+    return lista
+
+
+lista = [2, 101, 100, 45, 1100, 60, 13, 200, 234, 11101, 29, 33]
+
+print(list_prime(lista))

@@ -10,16 +10,7 @@ class Person():
 
 class Seller(Person):
     """ Inheritance of Person"""
-    def __init__(self,name, gender, age, profession, salary, turn):
-        self.name = name
-        self.gender = gender
-        self.age = age
-        self.profession = profession
-        self.salary = salary
-        self.turn = turn
-    def __str__(self):
-        return f"Nombre: {self.name}, Gender: {self.gender}, Age: {self.age}, Profession: {self.profession}, Salary: {self.salary}, Turn: {self.turn}"
-    
+    super().__init__(name, gender, age, profession, salary, categoria)
     def earned_salary(self,worked_hours):
         return worked_hours * self.salary
 
@@ -27,7 +18,7 @@ class Seller(Person):
 
 class Oficial(Person):
     def __init__(self, name, gender, age, profession, salary, categoria):
-        super().__init__(name, gender, age, profession, salary)
+        super().__init__(name, gender, age, profession, salary, categoria)
         self.categoria = categoria
 
     def __str__(self):
@@ -55,7 +46,7 @@ class Guarda(Person):
 
 seller = Seller("Juanito", "Male", 18,"Seller", 20000,"Licenciado")
 print(seller)
-oficial = Oficial("Mario", "Male", 20, "Oficial", "Night")
+oficial = Oficial("Mario", "Male", 20, "Oficial", 1000, "Night")
 print(oficial)
 administrador = Administrador("Karen", "Female", 22, "Sales Administrador", 350000, "Master")
 print(administrador)

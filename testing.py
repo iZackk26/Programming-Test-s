@@ -171,5 +171,32 @@ def ext(lista):
         data.sort()
     return data
 lista = [[89, 2, 4],[45, 1],[33, 22], [9]]
-print(ext(lista))
 
+
+# Ejercicio imprimir indice de cada elemento en las sublistas
+lista = [[1, 11, 10], [33, 456, 1, 32], [34, 66, 78, 98, 99, 1, 29]]
+
+def groups_indx(lista):
+    i = 0
+    data = []
+    for sublist in lista:
+        base = 0
+        while base < len(sublist):
+            if base == 0:
+                data.append([sublist[base],2])
+            if base == 1:
+                data.append([sublist[base],8])
+            if base == 2:
+                data.append([sublist[base], 10])
+            base += 1
+        i += 1
+    return data
+
+print(groups_indx(lista))
+
+                
+
+
+
+
+print(groups_indx(lista))

@@ -34,7 +34,7 @@ class SegurityOfficial(Person):
     def salario_devengado(self, worked_Hours):
         return worked_Hours * self.salary_x_hour
 
-class Administrativos(Person):
+class Administrador(Person):
     def __init__(self, name, age, country, cellphone, worked_Hours, salary_x_hour, grado_academico):
         super().__init__(name, age, country, cellphone, worked_Hours, salary_x_hour)
         self.grado_academico = grado_academico
@@ -71,7 +71,7 @@ salario2 = oficial.salario_devengado(oficial.worked_Hours)
 print(salario2)
 #Administrativos
 
-administrative = Administrativos("Hannia", 45, "Costa Rica", 83396311, 24, 1000000, "Doctor")
+administrative = Administrador("Hannia", 45, "Costa Rica", 83396311, 24, 1000000, "Doctor")
 salario3 = administrative.salario_devengado(administrative.worked_Hours)
 
 # print(salario3)

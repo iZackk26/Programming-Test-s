@@ -47,35 +47,41 @@ def quick_sort(lista):
             small.append(element)
         else:
             big.append(element)
-    return quick_sort(small) + [pivot] + quick_sort(big)
+    return quick_sort(big) + [pivot] + quick_sort(small)
 
 lista = [7,8,9,1,2,3,6,5,4,2,6,8,9,10]
 
-print(quick_sort(lista))
+# print(quick_sort(lista))
+
+#Esta es la funcion base, se puede modificar con la funcion max, para poder llegar reducir la funcion a una unica
+
+# def bigger(lista):
+#     big = lista[-1]
+#     for element in lista:
+#         if element > big:
+#             big = element
+#     return big
 
 
-
-def bigger(lista):
-    big = lista[-1]
-    for element in lista:
-        if element > big:
-            big = element
-    return big
-
+# def insertion_sorty(lista):
+#     data = []
+#     while len(lista) > 0:
+#         biggy = big(lista)
+#         data.append(biggy)
+#         lista.remove(biggy)
+#     return data
 
 def insertion_sorty(lista):
     data = []
     while len(lista) > 0:
-        biggy = big(lista)
-        data.append(biggy)
-        lista.remove(biggy)
+        big = max(lista)
+        data.append(big)
+        lista.remove(big)
     return data
 
 
-lista = [1,2,3,4,5,6,7,8,9,10]
 
 print(insertion_sorty(lista))
-
 
 
 
